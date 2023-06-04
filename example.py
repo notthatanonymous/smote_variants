@@ -34,3 +34,4 @@ grid= GridSearchCV(model,
 grid.fit(X, y)
 
 print(grid.best_params_, grid.best_score_)
+print(grid.predict_proba(X))
