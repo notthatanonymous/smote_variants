@@ -215,7 +215,8 @@ def load_dict(filename,
             file.close()
         return obj
 
-    raise ValueError(f"serialization {serialization} is not supported")
+    #raise ValueError(f"serialization {serialization} is not supported")
+    raise ValueError("serialization %s is not supported" % (serialization))
 
 def dump_dict(obj,
                 filename,
