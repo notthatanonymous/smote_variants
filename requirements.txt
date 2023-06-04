@@ -9,3 +9,4 @@ metric-learn
 seaborn
 common-datasets
 future-fstrings
+imblearn
