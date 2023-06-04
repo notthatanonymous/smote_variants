@@ -183,9 +183,10 @@ class Borderline_SMOTE1(OverSamplingSimplex):
                                                         maj_label=self.maj_label)
 
         if len(X_min) < 2 or len(X_danger) == 0:
-            return self.return_copies(X, y, "The number of samples "\
-                    f"after preprocessing X_min ({len(X_min)}) "\
-                    f" X_danger ({len(X_danger)} is not enough for sampling.")
+            # return self.return_copies(X, y, "The number of samples "\
+            #         f"after preprocessing X_min ({len(X_min)}) "\
+            #         f" X_danger ({len(X_danger)} is not enough for sampling.")
+            return self.return_copies(X, y, "The number of samples after preprocessing X_min (%s) X_danger (%s) is not enough for sampling." % (len(X_min), len(X_danger)))
 
         # fitting nearest neighbors model to minority samples
         k_neigh = min([len(X_min), self.k_neighbors + 1])
@@ -365,9 +366,10 @@ class Borderline_SMOTE2(OverSamplingSimplex):
                                                         maj_label=self.maj_label)
 
         if len(X_min) < 2 or len(X_danger) == 0:
-            return self.return_copies(X, y, "The number of samples "\
-                    f"after preprocessing X_min ({len(X_min)}) "\
-                    f" X_danger ({len(X_danger)} is not enough for sampling.")
+            # return self.return_copies(X, y, "The number of samples "\
+            #         f"after preprocessing X_min ({len(X_min)}) "\
+            #         f" X_danger ({len(X_danger)} is not enough for sampling.")
+            return self.return_copies(X, y, "The number of samples after preprocessing X_min (%s) X_danger (%s) is not enough for sampling." % (len(X_min), len(X_danger)))
 
         # fitting nearest neighbors model to samples
         k_neigh = self.k_neighbors + 1
