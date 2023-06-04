@@ -5,7 +5,6 @@ pandas
 scikit-learn
 minisom
 statistics
-mkl
 metric-learn
 seaborn
 common-datasets
