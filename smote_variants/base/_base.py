@@ -256,7 +256,7 @@ def dump_dict(obj,
             os.fsync(file)
             file.close()
     else:
-        raise ValueError(f"serialization {serialization} is not supported")
+        raise ValueError("serialization %s is not supported" % (serialization))
 
 def check_if_damaged(filename, serialization="json"):
     """
