@@ -400,8 +400,9 @@ class SimplexSamplingMixin(RandomStateMixin):
             return np.repeat(1.0/len(simplices), len(simplices))
         if self.simplex_sampling == 'volume':
             return simplex_volumes(X[simplices])
-        raise ValueError(f"simplex sampling with weighting "\
-                            f"{self.simplex_sampling} not implemented yet")
+        # raise ValueError(f"simplex sampling with weighting "\
+        #                     f"{self.simplex_sampling} not implemented yet")
+        raise ValueError("simplex sampling with weighting %s not implemented yet" % (self.simplex_sampling))
 
     def all_simplices_node_weights(self, indices, simplex_weights, n_dim):
         """
