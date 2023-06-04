@@ -635,8 +635,7 @@ class SimplexSamplingMixin(RandomStateMixin):
         if n_dim == 1:
             return self.deterministic_samples_dim_1(X, simplices)
 
-        raise ValueError(f"deterministic calculations for dim {n_dim} are\
-                            not implemented yet")
+        raise ValueError("deterministic calculations for dim %s are not implemented yet" % (n_dim))
 
     def sample_simplex(self,
                 X,
@@ -696,7 +695,5 @@ class SimplexSamplingMixin(RandomStateMixin):
                                                                 vertex_weights=vertex_weights,
                                                                 n_dim=n_dim)
         else:
-            msg = "Within simplex sampling strategy"\
-                f" {self.within_simplex_sampling} is not implemented yet."
-            raise ValueError(msg)
+            raise ValueError("Within simplex sampling strategy %s is not implemented yet." % (self.within_simplex_sampling))
         return self.add_gaussian_noise(samples)
