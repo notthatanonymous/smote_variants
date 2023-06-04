@@ -171,8 +171,7 @@ class OverSamplingBase(StatisticsMixin,
         if isinstance(strategy, (int, float)):
             return max([0, int((n_maj - n_min)*strategy)])
 
-        raise ValueError(f"{self.__class__.__name__} Value {strategy} "\
-                            "for parameter strategy is not supported")
+        raise ValueError("%s Value %s for parameter strategy is not supported" % (self.__class__.__name__, strategy))
 
     def fit_resample(self, X, y):
         """
@@ -221,9 +220,7 @@ class OverSamplingBase(StatisticsMixin,
         for key, item in self.checks.items():
             if key == 'min_n_min':
                 if self.class_stats[self.min_label] <= item:
-                    msg = f"{self.__class__.__name__}: Too few minority samples"\
-                            " for sampling"
-                    _logger.info(msg)
+                    _logger.info("%s: Too few minority samples for sampling" % (self.__class__.__name__))
                     return X.copy(), y.copy()
             if key == 'min_n_dim':
                 if X.shape[1] < item:
@@ -249,7 +246,7 @@ class OverSamplingBase(StatisticsMixin,
                         self.__class__.__name__, msg)
 
         if not suppress_internal_warnings():
-            warnings.warn(f"{self.__class__.__name__}: returning copies for {msg}")
+            warnings.warn("%s: returning copies for {msg}" % (self.__class__.__name__))
 
         return X.copy(), y.copy()
 
@@ -357,9 +354,7 @@ class OverSamplingSimplex(OverSamplingBase, SimplexSamplingMixin):
 
         if checks is not None and 'simplex_dim' in checks:
             if n_dim != checks['simplex_dim']:
-                warnings.warn(f"Simplex dimensions {n_dim} not supported "\
-                                f"with the method {self.__class__.__name__} "\
-                                f"forcing n_dim={checks['simplex_dim']}")
+                warnings.warn("Simplex dimensions %s not supported with the method %s forcing n_dim=%s" % (n_dim, self.__class__.__name__, checks['simplex_dim']))
                 n_dim = checks['simplex_dim']
 
         SimplexSamplingMixin.__init__(self,
