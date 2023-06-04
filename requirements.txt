@@ -5,8 +5,6 @@ pandas
 scikit-learn
 minisom
 statistics
-tensorflow
-keras
 mkl
 metric-learn
 seaborn
