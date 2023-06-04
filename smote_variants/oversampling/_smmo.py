@@ -1,3 +1,4 @@
+# -*- coding: future_fstrings -*-
 """
 This module implements the SMMO method.
 """

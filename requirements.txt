@@ -8,3 +8,4 @@ statistics
 metric-learn
 seaborn
 common-datasets
+future-fstrings
