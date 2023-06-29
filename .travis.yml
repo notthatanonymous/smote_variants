@@ -48,7 +48,7 @@ jobs:
       before_install:
         - choco install python --version 3.8.0
         - python -m pip install --upgrade pip
-      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH# command to install dependencies
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH# command to install dependencies
 install:
   - pip3 install --upgrade pip
   - pip3 install .
