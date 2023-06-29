@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
+import platform
 
 libras= imb_datasets.fetch_datasets()['libras_move']
 X, y= libras['data'], libras['target']
@@ -33,5 +34,9 @@ grid= GridSearchCV(model,
 # Fitting the pipeline
 grid.fit(X, y)
 
+print("\n\n\n\n")
 print(grid.best_params_, grid.best_score_)
-print(grid.predict_proba(X))
+print("\n\n\n\n")
+print(f"{platform.platform()}")
+print("\n\n\n\n")
+#print(grid.predict_proba(X))
