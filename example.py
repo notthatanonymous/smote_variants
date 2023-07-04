@@ -27,17 +27,18 @@ param_grid= {'clf__oversampler':[('smote_variants', 'distance_SMOTE', {'proporti
 grid= GridSearchCV(model,
                   param_grid=param_grid,
                   cv=3,
-                  n_jobs=1,
-                  verbose=2,
+                  n_jobs=-1,
+                  verbose=0,
                   scoring='accuracy')
 
 # Fitting the pipeline
 grid.fit(X, y)
 
-print("\n\n\n\n")
-print(grid.best_params_, grid.best_score_)
-print("\n\n\n\n")
-#print(f"{platform.platform()}, {platform.processor()}, {platform.dist()}, {platform.python_version()}")
-print(f"{platform.uname()}, {platform.python_version()}")
-print("\n\n\n\n")
-#print(grid.predict_proba(X))
+print(f"\n\n\nScore: {grid.best_score_}\n\n\n")
+# print("\n\n\n\n")
+# print(grid.best_params_, grid.best_score_)
+# print("\n\n\n\n")
+# #print(f"{platform.platform()}, {platform.processor()}, {platform.dist()}, {platform.python_version()}")
+# print(f"{platform.uname()}, {platform.python_version()}")
+# print("\n\n\n\n")
+# #print(grid.predict_proba(X))
