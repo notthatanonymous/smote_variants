@@ -2,7 +2,7 @@ setuptools>=41.0.1
 joblib
 numpy
 pandas
-scikit-learn
+scikit-learn<=1.2.2
 minisom
 statistics
 metric-learn
