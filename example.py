@@ -27,7 +27,7 @@ param_grid= {'clf__oversampler':[('smote_variants', 'distance_SMOTE', {'proporti
 grid= GridSearchCV(model,
                   param_grid=param_grid,
                   cv=3,
-                  n_jobs=-1,
+                  n_jobs=1,
                   verbose=0,
                   scoring='accuracy')
 
